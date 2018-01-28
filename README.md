@@ -1,3 +1,7 @@
+# Surprise! Customized Service Available!--2018/01/28_16:24 
+想为您亲爱的他（她、它）定制专属的“每日一言”功能吗？让您的祝福与希冀相伴他（她、它）的365天！现在，我们真诚地推出了这项服务^-^，您可以选择分享您的爱情故事来获取这项服务（公开或者匿名都是可行的），也可以通过支付0.1美元来获取这项服务（这是为不那么想分享故事的顾客准备的）。当然我们更希望您选择前者，所有的故事分享我们将会展示在本项目主目录下的故事专栏。——来自“煮蛋计时器”开发团队  
+以下是付款通道：
+
 # Egg-Timer_1.12 Now Available!--2018/01/26_21:26  
 嘿，大伙儿！煮蛋计时器的1.12版本现在已经开放下载了，下载路径为本目录下的Egg-Timer_1.12文件夹。希望我们的工作能够为您的生活增添一份美好！祝您每天过得充实而愉快！——来自“煮蛋计时器”开发团队  
 Hey, folks! The 1.12 version of Egg-Timer is now available. Just feel free to download it. We hope our work will help you having a more beautiful life! Bset wishes for you all!——From "Egg-Timer" development team
