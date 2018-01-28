@@ -1,5 +1,5 @@
 # Egg-Timer_1.12 Now Available!--2018/01/26_21:26  
-嘿，大伙儿！煮蛋计时器的1.12版本现在已经开放下载了。希望我们的工作能够为您的生活增添一份美好！祝您每天过得充实而愉快！——来自“煮蛋计时器”开发团队  
+嘿，大伙儿！煮蛋计时器的1.12版本现在已经开放下载了，下载路径为本目录下的Egg-Timer_1.12文件夹。希望我们的工作能够为您的生活增添一份美好！祝您每天过得充实而愉快！——来自“煮蛋计时器”开发团队  
 Hey, folks! The 1.12 version of Egg-Timer is now available. Just feel free to download it. We hope our work will help you having a more beautiful life! Bset wishes for you all!——From "Egg-Timer" development team
 
 # Good News! Egg-Timer_1.12 is Coming!--2018/01/25_12:06  
