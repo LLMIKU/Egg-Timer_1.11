@@ -821,8 +821,9 @@ void CountDay(int YearDay)
 {
 	char weekday[7][10] = { "日", "一", "二", "三", "四", "五", "六" };
 	int w = (YearDay) % 7;
+	int weekAddition = (w == 0) ? (0) : (1);
 	printf("\n今年第%d天，第%d周的周%s\n",
-		YearDay, (YearDay) / 7, weekday[w]);
+		YearDay, (YearDay) / 7 + weekAddition, weekday[w]);
 }
 
 int checkAllSet(data *TBT, char *model,int *seconds)
