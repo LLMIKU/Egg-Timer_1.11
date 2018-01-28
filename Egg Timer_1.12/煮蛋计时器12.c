@@ -12,17 +12,17 @@
 #include <direct.h>
 #include "TBTlog.h"
 /*
-Ö§³ÖÖĞÍ¾¸ü¸ÄÅäÖÃ
-¶¨ÒåÁË½á¹¹ÌåÊı×é
-Ã¿ÈÕÒ»ÑÔ¹¦ÄÜÍêÉÆ
-¼ÓÈë¼ÆÊ±ÈÕÖ¾ 2017.8.21_13:34
-Ã¿ÈÕÒ»ÑÔ°´Ğò¶ÁÈ¡ÊµÏÖ 2017.8.26_20:19
-Èç¹ûĞèÒªÆôÓÃÃ¿ÈÕÒ»ÑÔ£¬ĞèÒª×Ô¼ºÌí¼ÓÒ»¸ö ÎÄ¼ş¼ÓÃÜ3 ¼ÓÃÜºóµÄTBTwords.txt
-¸ü¸ÄÁËÄ¬ÈÏÅäÖÃÎÄ¼şÂ·¾¶ÎªE:\Program Files (x86)
-¼ÓÈëÁËĞ¶ÔØÅäÖÃÏî 2017.8.26_22:54
-¸ü¸ÄÁËÏÔÊ¾Ğ§¹ûºÍĞ¶ÔØÏîÌáÊ¾
-Ìí¼ÓÁËÂ·¾¶¿ØÖÆÆ÷ºÍ°æ±¾¿ØÖÆÆ÷£¨ÔÚTBTlog.hÀï£©
-Ìí¼ÓÁË¶ÔÒÔÍù°æ±¾ÅäÖÃµÄÖ§³Ö 2018.1.25_17:26
+æ”¯æŒä¸­é€”æ›´æ”¹é…ç½®
+å®šä¹‰äº†ç»“æ„ä½“æ•°ç»„
+æ¯æ—¥ä¸€è¨€åŠŸèƒ½å®Œå–„
+åŠ å…¥è®¡æ—¶æ—¥å¿— 2017.8.21_13:34
+æ¯æ—¥ä¸€è¨€æŒ‰åºè¯»å–å®ç° 2017.8.26_20:19
+å¦‚æœéœ€è¦å¯ç”¨æ¯æ—¥ä¸€è¨€ï¼Œéœ€è¦è‡ªå·±æ·»åŠ ä¸€ä¸ª æ–‡ä»¶åŠ å¯†3 åŠ å¯†åçš„TBTwords.txt
+æ›´æ”¹äº†é»˜è®¤é…ç½®æ–‡ä»¶è·¯å¾„ä¸ºE:\Program Files (x86)
+åŠ å…¥äº†å¸è½½é…ç½®é¡¹ 2017.8.26_22:54
+æ›´æ”¹äº†æ˜¾ç¤ºæ•ˆæœå’Œå¸è½½é¡¹æç¤º
+æ·»åŠ äº†è·¯å¾„æ§åˆ¶å™¨å’Œç‰ˆæœ¬æ§åˆ¶å™¨ï¼ˆåœ¨TBTlog.hé‡Œï¼‰
+æ·»åŠ äº†å¯¹ä»¥å¾€ç‰ˆæœ¬é…ç½®çš„æ”¯æŒ 2018.1.25_17:26
 */
 
 typedef struct _data
@@ -76,7 +76,7 @@ int GetYearDay(int *day)
 	tTime = time(NULL);
 	tmTime = localtime(&tTime);
 	//timeLen = strftime(strTime, 33, "%Y(Y)%m(M)%d(D)%H(H)%M(M)%S(S)", tmTime);
-	*day = tmTime->tm_yday + 1;//»ñÈ¡ÏµÍ³µ±Ç°ÌìÊÇÒ»ÄêÖĞµÄµÚ¼¸Ìì
+	*day = tmTime->tm_yday + 1;//è·å–ç³»ç»Ÿå½“å‰å¤©æ˜¯ä¸€å¹´ä¸­çš„ç¬¬å‡ å¤©
 	return 0;
 }
 
@@ -96,30 +96,30 @@ void CreateVbs(char *tmpStr, int minutes, const char *model)
 	else
 	{
 		printf("open the VBS file succeed!\n");
-		printf("\n¼ÆÊ±Í£Ö¹Ê±¿Ì£º%s\n\n", tmpStr);
+		printf("\nè®¡æ—¶åœæ­¢æ—¶åˆ»ï¼š%s\n\n", tmpStr);
 	}
 	if (*model == 'w')
 	{
 		sprintf(str3,
-			"CreateObject(\"SAPI.SpVoice\").Speak\"ÏÖÔÚÊÇ±±¾©Ê±¼ä%s£¬\
-			ÄúÒÑ¾­¹¤×÷ÁË%d·ÖÖÓ£¬Çë×¢ÒâĞİÏ¢£¬\
+			"CreateObject(\"SAPI.SpVoice\").Speak\"ç°åœ¨æ˜¯åŒ—äº¬æ—¶é—´%sï¼Œ\
+			æ‚¨å·²ç»å·¥ä½œäº†%dåˆ†é’Ÿï¼Œè¯·æ³¨æ„ä¼‘æ¯ï¼Œ\
 			you have already worked for %d minutes, please pay attention to your health,\
 			\"",tmpStr, minutes, minutes);
 	}
 	if (*model == 'r')
 	{
 		sprintf(str3,
-			"CreateObject(\"SAPI.SpVoice\").Speak\"ÏÖÔÚÊÇ±±¾©Ê±¼ä%s£¬\
-			ÄúÒÑ¾­ĞİÏ¢ÁË%d·ÖÖÓ£¬Çë×¢Òâ¹¤×÷×´Ì¬£¬\
+			"CreateObject(\"SAPI.SpVoice\").Speak\"ç°åœ¨æ˜¯åŒ—äº¬æ—¶é—´%sï¼Œ\
+			æ‚¨å·²ç»ä¼‘æ¯äº†%dåˆ†é’Ÿï¼Œè¯·æ³¨æ„å·¥ä½œçŠ¶æ€ï¼Œ\
 			you have already rested for %d minutes, please pay attention to your work\"",
 			tmpStr, minutes, minutes);
 	}
 	m = fputs(str3, fp);
 	if (m == 0)
 	{
-		printf("ÏÖÔÚ¿ªÊ¼ÓïÒô²¥±¨£¡\n");
+		printf("ç°åœ¨å¼€å§‹è¯­éŸ³æ’­æŠ¥ï¼\n");
 	}
-	else printf("àŞàŞ£¬·¢ÉúÁËÄ³ÖÖ´íÎó£¬ÎÒÃÇÎŞ·¨Æô¶¯ÓïÒô²¥±¨£¡\n");
+	else printf("å™¢å™¢ï¼Œå‘ç”Ÿäº†æŸç§é”™è¯¯ï¼Œæˆ‘ä»¬æ— æ³•å¯åŠ¨è¯­éŸ³æ’­æŠ¥ï¼\n");
 	fclose(fp);
 	return;
 }
@@ -151,7 +151,7 @@ int TransNumbers(char *StrTmp, int *Number)
 		case '7':num = 7; break;
 		case '8':num = 8; break;
 		case '9':num = 9; break;
-		default:num = 0; break;/* printf("fun TransNumbers() err: ¶ÁÈ¡Êı×Ö´íÎó\n"); ret = -1; return ret;*/
+		default:num = 0; break;/* printf("fun TransNumbers() err: è¯»å–æ•°å­—é”™è¯¯\n"); ret = -1; return ret;*/
 		}
 		for (j = i; j < count - 1; j++)
 		{
@@ -195,7 +195,7 @@ int ReadIni(char *filename, char *part, int *partValue)
 	strcpy(fileNameStr, filename);
 	strcat(filePathStr, fileNameStr);
 	char str2[220] = { 0 };
-	strcpy(str2, filePathStr);//ÕâÀïÎªÁË·½±ãÆğ¼û£¬½«filePathStr¸´ÖÆ¸østr2
+	strcpy(str2, filePathStr);//è¿™é‡Œä¸ºäº†æ–¹ä¾¿èµ·è§ï¼Œå°†filePathStrå¤åˆ¶ç»™str2
 	
 	FILE *fp = fopen(str2, "r+");
 	if (fp == NULL)
@@ -212,30 +212,30 @@ int ReadIni(char *filename, char *part, int *partValue)
 	{
 		char *p = NULL;
 		char *ptmp = NULL, *pBegain = NULL, *pEnd = NULL;
-		fgets(str3, 256, fp);//ĞŞ¸ÄÈÕÆÚ£º2017.8.15_11:32
+		fgets(str3, 256, fp);//ä¿®æ”¹æ—¥æœŸï¼š2017.8.15_11:32
 		strcat(filestr, str3);
 		int n = strlen(str3);
-		str3[n + 1] = ';';//ÊÖ¶¯ÔÚ×Ö·û´®'\0'ºóÌí¼Ó';'½áÊø·û£¬·ÀÖ¹×Ö·û´®'='ºóÊ²Ã´¶¼Ã»ÓĞ¶øÖĞ¶Ï³ö´í
+		str3[n + 1] = ';';//æ‰‹åŠ¨åœ¨å­—ç¬¦ä¸²'\0'åæ·»åŠ ';'ç»“æŸç¬¦ï¼Œé˜²æ­¢å­—ç¬¦ä¸²'='åä»€ä¹ˆéƒ½æ²¡æœ‰è€Œä¸­æ–­å‡ºé”™
 		p = strstr(str3, part);
 		if (p != NULL)
 		{
-			flag = 1;//ÕÒµ½ÁËÅäÖÃÏî
+			flag = 1;//æ‰¾åˆ°äº†é…ç½®é¡¹
 			ptmp = strchr(str3, '=');
 			if (ptmp == NULL)
 			{
 				system("color D");
-				printf("ÅäÖÃÏî%sÃ»ÓĞ'='£¡\n", part);
-				printf("ÏÖÔÚ³õÊ¼»¯ËùÓĞÅäÖÃºÃÂğ\n");
+				printf("é…ç½®é¡¹%sæ²¡æœ‰'='ï¼\n", part);
+				printf("ç°åœ¨åˆå§‹åŒ–æ‰€æœ‰é…ç½®å¥½å—\n");
 				system("pause");
 				fclose(fp);
 				Initial_TBT_Set(str2);
 				fp = fopen(str2, "r+");
-				//´Ë´¦Ìí¼Ó´íÎó×´Ì¬
+				//æ­¤å¤„æ·»åŠ é”™è¯¯çŠ¶æ€
 				ret = -2;
 				goto End;
 			}
 			ptmp = ptmp + 1;
-			while (1)//¶ÁÈ¡ÅäÖÃÏî
+			while (1)//è¯»å–é…ç½®é¡¹
 			{
 				if (*ptmp == ' ')
 				{
@@ -246,8 +246,8 @@ int ReadIni(char *filename, char *part, int *partValue)
 					if (*ptmp == '\n' || *ptmp == ';' || *ptmp == '\0')
 					{
 						system("color B");
-						printf("ÅäÖÃÏî%sÃ»ÓĞÅäÖÃ³õÊ¼Öµ£¡\n", part);
-						printf("ÏÖÔÚ³õÊ¼»¯ËùÓĞÅäÖÃºÃÂğ\n");
+						printf("é…ç½®é¡¹%sæ²¡æœ‰é…ç½®åˆå§‹å€¼ï¼\n", part);
+						printf("ç°åœ¨åˆå§‹åŒ–æ‰€æœ‰é…ç½®å¥½å—\n");
 						system("pause");
 						fclose(fp);
 						Initial_TBT_Set(str2);
@@ -271,7 +271,7 @@ int ReadIni(char *filename, char *part, int *partValue)
 			pEnd = ptmp;
 			memcpy(partValueTmp, pBegain, pEnd - pBegain);
 			partValueTmp[pEnd - pBegain] = '\0';
-			if (*partValue == 0)//Èç¹û´«ÈëµÄpartValueµØÖ·µÄÄÚÈİÊÇ0£¬ËµÃ÷´«ÈëµÄÊÇÊı¾İ
+			if (*partValue == 0)//å¦‚æœä¼ å…¥çš„partValueåœ°å€çš„å†…å®¹æ˜¯0ï¼Œè¯´æ˜ä¼ å…¥çš„æ˜¯æ•°æ®
 			{
 				ret = TransNumbers(partValueTmp, partValue);
 				if (ret != 0)
@@ -280,14 +280,14 @@ int ReadIni(char *filename, char *part, int *partValue)
 				}
 				break;
 			}
-			else//·ñÔò´«ÈëµÄÊÇ×Ö·û´®µÄµØÖ·£¬½øĞĞÇ¿ÖÆÀàĞÍ×ª»»ÔÙ¿½±´
+			else//å¦åˆ™ä¼ å…¥çš„æ˜¯å­—ç¬¦ä¸²çš„åœ°å€ï¼Œè¿›è¡Œå¼ºåˆ¶ç±»å‹è½¬æ¢å†æ‹·è´
 			{
 				strcpy((char *)partValue, partValueTmp);
 				if (*partValueTmp != 'r' && *partValueTmp != 'w')
 				{
 					system("color D");
-					printf("ÅäÖÃÏî%sÅäÖÃ´íÎó£¡\n", part);
-					printf("ÏÖÔÚ³õÊ¼»¯ËùÓĞÅäÖÃºÃÂğ\n");
+					printf("é…ç½®é¡¹%sé…ç½®é”™è¯¯ï¼\n", part);
+					printf("ç°åœ¨åˆå§‹åŒ–æ‰€æœ‰é…ç½®å¥½å—\n");
 					system("pause");
 					fclose(fp);
 					Initial_TBT_Set(str2);
@@ -303,8 +303,8 @@ End:
 	if (flag == 0)
 	{
 		system("color D");
-		printf("Ã»ÓĞÕÒµ½%sÅäÖÃÏî\n", part);
-		printf("ÏÖÔÚ³õÊ¼»¯ËùÓĞÅäÖÃºÃÂğ\n");
+		printf("æ²¡æœ‰æ‰¾åˆ°%sé…ç½®é¡¹\n", part);
+		printf("ç°åœ¨åˆå§‹åŒ–æ‰€æœ‰é…ç½®å¥½å—\n");
 		system("pause");
 		fclose(fp);
 		Initial_TBT_Set(str2);
@@ -343,9 +343,9 @@ void CheckPreIni()
 		(fp10set != NULL || fp10log != NULL || fp10words != NULL))
 	{
 		system("color B");
-		printf("\n  ÕâÕæÊÇÌ«°ôÁË£¡ÎÒÃÇ¼ì²âµ½Äú»¹±£Áô×Å1.11ºÍ1.10°æ±¾µÄÏà¹ØÎÄ¼ş\n");
-		printf("\n  ÊäÈëÊı×Ö'0'²¢°´'Enter'¼üÈ·ÈÏ£¬ÎÒÃÇ½«ÎªÄú¸´ÖÆ1.10°æ±¾µÄÏà¹ØÎÄ¼şµ½1.12°æ±¾\n");
-		printf("\n  ÊäÈëÊı×Ö'1'²¢°´'Enter'¼üÈ·ÈÏ£¬ÎÒÃÇ½«ÎªÄú¸´ÖÆ1.11°æ±¾µÄÏà¹ØÎÄ¼şµ½1.12°æ±¾\n");
+		printf("\n  è¿™çœŸæ˜¯å¤ªæ£’äº†ï¼æˆ‘ä»¬æ£€æµ‹åˆ°æ‚¨è¿˜ä¿ç•™ç€1.11å’Œ1.10ç‰ˆæœ¬çš„ç›¸å…³æ–‡ä»¶\n");
+		printf("\n  è¾“å…¥æ•°å­—'0'å¹¶æŒ‰'Enter'é”®ç¡®è®¤ï¼Œæˆ‘ä»¬å°†ä¸ºæ‚¨å¤åˆ¶1.10ç‰ˆæœ¬çš„ç›¸å…³æ–‡ä»¶åˆ°1.12ç‰ˆæœ¬\n");
+		printf("\n  è¾“å…¥æ•°å­—'1'å¹¶æŒ‰'Enter'é”®ç¡®è®¤ï¼Œæˆ‘ä»¬å°†ä¸ºæ‚¨å¤åˆ¶1.11ç‰ˆæœ¬çš„ç›¸å…³æ–‡ä»¶åˆ°1.12ç‰ˆæœ¬\n");
 		while (version != 0 && version != 1)
 		{
 			scanf("%d", &version);
@@ -360,12 +360,12 @@ V1:	if (fp11set != NULL || fp11log != NULL || fp11words != NULL)
 		char ch = 0;
 		system("color B");
 		if (version == -1)
-			printf("\n  ÕâÕæÊÇÌ«°ôÁË£¡ÎÒÃÇ¼ì²âµ½Äú»¹±£Áô×Å1.11°æ±¾µÄÏà¹ØÎÄ¼ş\n");
-		printf("\n  ÏëÒª°Ñ1.11°æ±¾µÄÎÄ¼şÅäÖÃÈ«²¿Ó¦ÓÃµ½ĞÂµÄ1.12°æ±¾Âğ£¿\n");
-		printf("\n  µ±È»£¬ÎÒÃÇ²»»á¶ÔÄú±£Áô×ÅµÄÏà¹ØÎÄ¼ş×öÈÎºÎÉ¾³ı»òĞŞ¸Ä\n");
-		printf("\n  ÒòÎª¿´ÆğÀ´ËüÃÇÊÇÄúÏëÒª±£ÁôµÄÖØÒªÊı¾İ\n");
-		printf("\n  ÊäÈë×ÖÄ¸'y'²¢°´'Enter'¼üÈ·ÈÏ£¬ÎÒÃÇ½«ÎªÄú¸´ÖÆÏà¹ØÎÄ¼şµ½1.12°æ±¾\n");
-		printf("\n  ÊäÈë×ÖÄ¸'n'²¢°´'Enter'¼üÈ·ÈÏ£¬ÎÒÃÇ½«Îª1.12°æ±¾Éú³ÉÈ«ĞÂµÄÅäÖÃ\n");
+			printf("\n  è¿™çœŸæ˜¯å¤ªæ£’äº†ï¼æˆ‘ä»¬æ£€æµ‹åˆ°æ‚¨è¿˜ä¿ç•™ç€1.11ç‰ˆæœ¬çš„ç›¸å…³æ–‡ä»¶\n");
+		printf("\n  æƒ³è¦æŠŠ1.11ç‰ˆæœ¬çš„æ–‡ä»¶é…ç½®å…¨éƒ¨åº”ç”¨åˆ°æ–°çš„1.12ç‰ˆæœ¬å—ï¼Ÿ\n");
+		printf("\n  å½“ç„¶ï¼Œæˆ‘ä»¬ä¸ä¼šå¯¹æ‚¨ä¿ç•™ç€çš„ç›¸å…³æ–‡ä»¶åšä»»ä½•åˆ é™¤æˆ–ä¿®æ”¹\n");
+		printf("\n  å› ä¸ºçœ‹èµ·æ¥å®ƒä»¬æ˜¯æ‚¨æƒ³è¦ä¿ç•™çš„é‡è¦æ•°æ®\n");
+		printf("\n  è¾“å…¥å­—æ¯'y'å¹¶æŒ‰'Enter'é”®ç¡®è®¤ï¼Œæˆ‘ä»¬å°†ä¸ºæ‚¨å¤åˆ¶ç›¸å…³æ–‡ä»¶åˆ°1.12ç‰ˆæœ¬\n");
+		printf("\n  è¾“å…¥å­—æ¯'n'å¹¶æŒ‰'Enter'é”®ç¡®è®¤ï¼Œæˆ‘ä»¬å°†ä¸º1.12ç‰ˆæœ¬ç”Ÿæˆå…¨æ–°çš„é…ç½®\n");
 		while (ch != 'y' && ch != 'Y' && ch != 'n' && ch != 'N')
 		{
 			scanf("%c", &ch);
@@ -373,25 +373,25 @@ V1:	if (fp11set != NULL || fp11log != NULL || fp11words != NULL)
 			{
 				if (fp11set != NULL)
 				{
-					printf("\n  ¸´ÖÆTBTset.ini...\n");
+					printf("\n  å¤åˆ¶TBTset.ini...\n");
 					CopySet("TBTset.ini", fp11set);
 				}
 				if (fp11log != NULL)
 				{
-					printf("\n  ¸´ÖÆTBTlog.txt...\n");
+					printf("\n  å¤åˆ¶TBTlog.txt...\n");
 					CopySet("TBTlog.txt", fp11log);
 				}
 				if (fp11words != NULL)
 				{
-					printf("\n  ¸´ÖÆTBTwords.txt...\n");
+					printf("\n  å¤åˆ¶TBTwords.txt...\n");
 					CopySet("TBTwords.txt", fp11words);
 				}
-				printf("\n  ¸´ÖÆÍê³É!\n");
+				printf("\n  å¤åˆ¶å®Œæˆ!\n");
 				system("pause");
 			}
 			if (ch == 'n' || ch == 'N')
 			{
-				printf("\n  ÏÖÔÚÎÒÃÇ½«ÎªÄúÉú³ÉÈ«ĞÂµÄÅäÖÃ\n");
+				printf("\n  ç°åœ¨æˆ‘ä»¬å°†ä¸ºæ‚¨ç”Ÿæˆå…¨æ–°çš„é…ç½®\n");
 				break;
 			}
 		}
@@ -405,12 +405,12 @@ V0:	if (fp10set != NULL || fp10log != NULL || fp10words != NULL)
 		char ch = 0;
 		system("color B");
 		if (version == -1)
-			printf("\n  ÕâÕæÊÇÌ«°ôÁË£¡ÎÒÃÇ¼ì²âµ½Äú»¹±£Áô×Å1.10°æ±¾µÄÏà¹ØÎÄ¼ş\n");
-		printf("\n  ÏëÒª°Ñ1.10°æ±¾µÄÎÄ¼şÅäÖÃÈ«²¿Ó¦ÓÃµ½ĞÂµÄ1.12°æ±¾Âğ£¿\n");
-		printf("\n  µ±È»£¬ÎÒÃÇ²»»á¶ÔÄú±£Áô×ÅµÄÏà¹ØÎÄ¼ş×öÈÎºÎÉ¾³ı»òĞŞ¸Ä\n");
-		printf("\n  ÒòÎª¿´ÆğÀ´ËüÃÇÊÇÄúÏëÒª±£ÁôµÄÖØÒªÊı¾İ\n");
-		printf("\n  ÊäÈë×ÖÄ¸'y'²¢°´'Enter'¼üÈ·ÈÏ£¬ÎÒÃÇ½«ÎªÄú¸´ÖÆÏà¹ØÎÄ¼şµ½1.12°æ±¾\n");
-		printf("\n  ÊäÈë×ÖÄ¸'n'²¢°´'Enter'¼üÈ·ÈÏ£¬ÎÒÃÇ½«Îª1.12°æ±¾Éú³ÉÈ«ĞÂµÄÅäÖÃ\n");
+			printf("\n  è¿™çœŸæ˜¯å¤ªæ£’äº†ï¼æˆ‘ä»¬æ£€æµ‹åˆ°æ‚¨è¿˜ä¿ç•™ç€1.10ç‰ˆæœ¬çš„ç›¸å…³æ–‡ä»¶\n");
+		printf("\n  æƒ³è¦æŠŠ1.10ç‰ˆæœ¬çš„æ–‡ä»¶é…ç½®å…¨éƒ¨åº”ç”¨åˆ°æ–°çš„1.12ç‰ˆæœ¬å—ï¼Ÿ\n");
+		printf("\n  å½“ç„¶ï¼Œæˆ‘ä»¬ä¸ä¼šå¯¹æ‚¨ä¿ç•™ç€çš„ç›¸å…³æ–‡ä»¶åšä»»ä½•åˆ é™¤æˆ–ä¿®æ”¹\n");
+		printf("\n  å› ä¸ºçœ‹èµ·æ¥å®ƒä»¬æ˜¯æ‚¨æƒ³è¦ä¿ç•™çš„é‡è¦æ•°æ®\n");
+		printf("\n  è¾“å…¥å­—æ¯'y'å¹¶æŒ‰'Enter'é”®ç¡®è®¤ï¼Œæˆ‘ä»¬å°†ä¸ºæ‚¨å¤åˆ¶ç›¸å…³æ–‡ä»¶åˆ°1.12ç‰ˆæœ¬\n");
+		printf("\n  è¾“å…¥å­—æ¯'n'å¹¶æŒ‰'Enter'é”®ç¡®è®¤ï¼Œæˆ‘ä»¬å°†ä¸º1.12ç‰ˆæœ¬ç”Ÿæˆå…¨æ–°çš„é…ç½®\n");
 		while (ch != 'y' && ch != 'Y' && ch != 'n' && ch != 'N')
 		{
 			scanf("%c", &ch);
@@ -418,25 +418,25 @@ V0:	if (fp10set != NULL || fp10log != NULL || fp10words != NULL)
 			{
 				if (fp10set != NULL)
 				{
-					printf("\n  ¸´ÖÆTBTset.ini...\n");
+					printf("\n  å¤åˆ¶TBTset.ini...\n");
 					CopySet("TBTset.ini", fp10set);
 				}
 				if (fp10log != NULL)
 				{
-					printf("\n  ¸´ÖÆTBTlog.txt...\n");
+					printf("\n  å¤åˆ¶TBTlog.txt...\n");
 					CopySet("TBTlog.txt", fp10log);
 				}
 				if (fp10words != NULL)
 				{
-					printf("\n  ¸´ÖÆTBTwords.txt...\n");
+					printf("\n  å¤åˆ¶TBTwords.txt...\n");
 					CopySet("TBTwords.txt", fp10words);
 				}
-				printf("\n  ¸´ÖÆÍê³É!\n");
+				printf("\n  å¤åˆ¶å®Œæˆ!\n");
 				system("pause");
 			}
 			if (ch == 'n' || ch == 'N')
 			{
-				printf("\n  ÏÖÔÚÎÒÃÇ½«ÎªÄúÉú³ÉÈ«ĞÂµÄÅäÖÃ\n");
+				printf("\n  ç°åœ¨æˆ‘ä»¬å°†ä¸ºæ‚¨ç”Ÿæˆå…¨æ–°çš„é…ç½®\n");
 				break;
 			}
 				
@@ -453,13 +453,13 @@ int CreateIni(char *filename)
 	int ret = 0;
 	if (filename == NULL)
 	{
-		printf("fun CreateIni() ´«ÈëµØÖ·²»ÄÜÎªNULL\n");
+		printf("fun CreateIni() ä¼ å…¥åœ°å€ä¸èƒ½ä¸ºNULL\n");
 		ret = -1;
 		return ret;
 	}
 	if (*filename == (char)NULL)
 	{
-		printf("fun CreateIni() ´«ÈëµÄÎÄ¼şÃû²»ÄÜÎª¿Õ\n");
+		printf("fun CreateIni() ä¼ å…¥çš„æ–‡ä»¶åä¸èƒ½ä¸ºç©º\n");
 		ret = -2;
 		return ret;
 	}
@@ -471,11 +471,11 @@ int CreateIni(char *filename)
 	FILE *fp = fopen(filePathStr, "r+");
 	if (fp == NULL)
 	{
-		int status = _mkdir(filePath); /*´´½¨Â·¾¶*/
+		int status = _mkdir(filePath); /*åˆ›å»ºè·¯å¾„*/
 		(!status) ? (printf("New directory created (%s): %s\n",TBTversion,filePath)) :
 			(printf("Unable to create new directory (%s): %s\n",TBTversion,filePath));
-		CheckPreIni();//¼ì²éÒÔÍù°æ±¾µÄÅäÖÃ
-		fp = fopen(filePathStr, "r+");//³¢ÊÔÖØĞÂ´ò¿ªÅäÖÃÎÄ¼ş
+		CheckPreIni();//æ£€æŸ¥ä»¥å¾€ç‰ˆæœ¬çš„é…ç½®
+		fp = fopen(filePathStr, "r+");//å°è¯•é‡æ–°æ‰“å¼€é…ç½®æ–‡ä»¶
 		if (fp == NULL)
 		{
 			printf("We can't find the necessary .ini file\n");
@@ -490,23 +490,23 @@ int CreateIni(char *filename)
 	return ret;
 }
 
-void TimeBroadcast(int i, const char *model)//´«Èë²ÎÊıÎªÃëÊı 
+void TimeBroadcast(int i, const char *model)//ä¼ å…¥å‚æ•°ä¸ºç§’æ•° 
 {
 	int minutes = 0;
 	minutes = i / 60;
 	char tmpStr[64];
 	char str[128];
-	GetCurTime(tmpStr);//»ñÈ¡µ±Ç°Ê±¼ä 
+	GetCurTime(tmpStr);//è·å–å½“å‰æ—¶é—´ 
 	sprintf(str, "%s", tmpStr);
 
 	char filePathStr[128] = filePath;
 	char fileNameStr[128] = "voice.VBS";
 	strcat(filePathStr, fileNameStr);
-	CreateVbs(str, minutes, model);//Ğ´ÈëÁÙÊ±ÓïÒôÎÄ¼ş
-	ShellExecuteA(0, "open", filePathStr, 0, 0, 1);//Ö´ĞĞÓïÒô²¥±¨ 
-	Sleep(20000);//ÓïÒô²¥±¨Ô¤ÁôÊ±¼ä20s 
+	CreateVbs(str, minutes, model);//å†™å…¥ä¸´æ—¶è¯­éŸ³æ–‡ä»¶
+	ShellExecuteA(0, "open", filePathStr, 0, 0, 1);//æ‰§è¡Œè¯­éŸ³æ’­æŠ¥ 
+	Sleep(20000);//è¯­éŸ³æ’­æŠ¥é¢„ç•™æ—¶é—´20s 
 	//Sleep(1000);
-	remove(filePathStr);//É¾³ıÁÙÊ±ÓïÒôÎÄ¼ş
+	remove(filePathStr);//åˆ é™¤ä¸´æ—¶è¯­éŸ³æ–‡ä»¶
 
 	return;
 }
@@ -635,46 +635,46 @@ int RecheckIni(data *TBT, char *model)
 
 void InfoPrint(int i, data *TBT, char *model)
 {
-	char lockstatu[5] = "¹Ø";
-	char soundstatu[5] = "¹Ø";
-	char testStatu[5] = "¹Ø";
-	char time_resetStatu[5] = "¹Ø";
-	char all_resetStatu[5] = "¹Ø";
-	char informationStatu[7] = "²»ÏÔÊ¾";
+	char lockstatu[5] = "å…³";
+	char soundstatu[5] = "å…³";
+	char testStatu[5] = "å…³";
+	char time_resetStatu[5] = "å…³";
+	char all_resetStatu[5] = "å…³";
+	char informationStatu[7] = "ä¸æ˜¾ç¤º";
 	/*if (TBT->test != 1)
 		system("cls");*/
 	system("cls");
 	if (TBT->lock == 1)
-		strcpy(lockstatu, "¿ª");
+		strcpy(lockstatu, "å¼€");
 	if (TBT->sound == 1)
-		strcpy(soundstatu, "¿ª");
+		strcpy(soundstatu, "å¼€");
 	if (TBT->test == 1)
-		strcpy(testStatu, "¿ª");
+		strcpy(testStatu, "å¼€");
 	if (TBT->time_reset == 1)
-		strcpy(time_resetStatu, "¿ª");
+		strcpy(time_resetStatu, "å¼€");
 	if (TBT->all_reset == 1)
-		strcpy(all_resetStatu, "¿ª");
+		strcpy(all_resetStatu, "å¼€");
 	if (TBT->information == 1)
-		strcpy(informationStatu, "ÏÔÊ¾");
+		strcpy(informationStatu, "æ˜¾ç¤º");
 	if (i <= 59)
-		printf("\n\n  ÏÖÔÚÊÇ  µÚ%dÃë\n", i);
+		printf("\n\n  ç°åœ¨æ˜¯  ç¬¬%dç§’\n", i);
 	else if (i % 60 == 0)
 	{
-		printf("\n\n  ÏÖÔÚÊÇ  µÚ%d·ÖÖÓ\n", i / 60);
+		printf("\n\n  ç°åœ¨æ˜¯  ç¬¬%dåˆ†é’Ÿ\n", i / 60);
 	}
 	else if (i % 60 != 0)
-		printf("\n\n  ÏÖÔÚÊÇ  µÚ%d·ÖÖÓ  µÚ%dÃë\n", i / 60, i % 60);
+		printf("\n\n  ç°åœ¨æ˜¯  ç¬¬%dåˆ†é’Ÿ  ç¬¬%dç§’\n", i / 60, i % 60);
 
 	if (TBT->information == 0)
 		return;
-	printf("\n\nÅäÖÃ×´Ì¬(%s):\n",TBTversion);
-	printf("¶¨Ê±£º%d·ÖÖÓ  Ä£Ê½£º%s\n\n", TBT->minutes, model);
-	printf("ÆÁÄ»Ëø£º%s\n\n", lockstatu);
-	printf("ÉùÒô£º%s  ÒôÀÖÀàĞÍ£º%d\n\n", soundstatu, TBT->music);
-	printf("¿ìËÙ²âÊÔ£º%s\n\n", testStatu);
-	printf("¼ÆÊ±×´Ì¬³õÊ¼»¯£º%s  ", time_resetStatu);
-	printf("ËùÓĞÅäÖÃ³õÊ¼»¯£º%s\n", all_resetStatu);
-	//printf("ÅäÖÃÏî×´Ì¬£º%s\n", informationStatu);
+	printf("\n\né…ç½®çŠ¶æ€(%s):\n",TBTversion);
+	printf("å®šæ—¶ï¼š%dåˆ†é’Ÿ  æ¨¡å¼ï¼š%s\n\n", TBT->minutes, model);
+	printf("å±å¹•é”ï¼š%s\n\n", lockstatu);
+	printf("å£°éŸ³ï¼š%s  éŸ³ä¹ç±»å‹ï¼š%d\n\n", soundstatu, TBT->music);
+	printf("å¿«é€Ÿæµ‹è¯•ï¼š%s\n\n", testStatu);
+	printf("è®¡æ—¶çŠ¶æ€åˆå§‹åŒ–ï¼š%s  ", time_resetStatu);
+	printf("æ‰€æœ‰é…ç½®åˆå§‹åŒ–ï¼š%s\n", all_resetStatu);
+	//printf("é…ç½®é¡¹çŠ¶æ€ï¼š%s\n", informationStatu);
 	return;
 }
 
@@ -716,7 +716,7 @@ void GetDayWords(int day)
 	char scan[16];
 	char *p = NULL;
 	int first = 0;
-	sprintf(scan, "%d¡¢", d);
+	sprintf(scan, "%dã€", d);
 	char filePathStr[128] = filePath;
 	char fileNameStr[128] = "TBTwords.txt";
 	strcat(filePathStr, fileNameStr);
@@ -727,15 +727,15 @@ void GetDayWords(int day)
 		return;
 	}
 
-	/*366ÌìÃ¿ÈÕÒ»ÑÔ²âÊÔÄ£¿é*/
+	/*366å¤©æ¯æ—¥ä¸€è¨€æµ‹è¯•æ¨¡å—*/
 	//int flag = 0;
 	//for (d = 1; d <= 366; d++)
 	//{
-	//	sprintf(scan, "%d¡¢", d);
+	//	sprintf(scan, "%dã€", d);
 	//	while (!feof(fp))
 	//	{
 	//		fgets(str, 100, fp);
-	//		myStrChange(str, out);//½âÃÜ
+	//		myStrChange(str, out);//è§£å¯†
 	//		p = strstr(out, scan);
 	//		if (flag == 1)
 	//		{
@@ -750,7 +750,7 @@ void GetDayWords(int day)
 	//		if (p != NULL&&flag == 0)
 	//		{
 	//			printf("%s", p /*+ strlen(scan)*/);
-	//			sprintf(scan, "%d¡¢", d + 1);
+	//			sprintf(scan, "%dã€", d + 1);
 	//			flag = 1;
 	//		}
 	//		memset(str, 0, 100);
@@ -760,28 +760,28 @@ void GetDayWords(int day)
 	//	Sleep(1000);
 	//}
 
-	/*Ã¿ÈÕÒ»ÑÔµ¥¸öĞòºÅ´òÓ¡Ä£¿é*/
+	/*æ¯æ—¥ä¸€è¨€å•ä¸ªåºå·æ‰“å°æ¨¡å—*/
 	int flag = 0;
 	while (!feof(fp))
 	{
 		fgets(str, 100, fp);
-		myStrChange(str, out);//½âÃÜ
-		p = strstr(out, scan);//ËÑË÷×Ö·û´®ÖĞÊÇ·ñ°üº¬ĞòºÅ
-		if (flag == 1)//Èç¹ûÒÑ¾­³É¹¦ËÑË÷µ½µÚÒ»´ÎµÄĞòºÅ
+		myStrChange(str, out);//è§£å¯†
+		p = strstr(out, scan);//æœç´¢å­—ç¬¦ä¸²ä¸­æ˜¯å¦åŒ…å«åºå·
+		if (flag == 1)//å¦‚æœå·²ç»æˆåŠŸæœç´¢åˆ°ç¬¬ä¸€æ¬¡çš„åºå·
 		{
-			if (p != NULL)//Èç¹ûËÑË÷µ½µÚ¶ş´ÎµÄĞòºÅ
+			if (p != NULL)//å¦‚æœæœç´¢åˆ°ç¬¬äºŒæ¬¡çš„åºå·
 			{
-				*p = '\0';//×Ö·û´®ÖĞµ±Ç°Î»ÖÃ¸ÄÎª×Ö·û´®½áÊø·û'\0'
+				*p = '\0';//å­—ç¬¦ä¸²ä¸­å½“å‰ä½ç½®æ”¹ä¸ºå­—ç¬¦ä¸²ç»“æŸç¬¦'\0'
 				printf("%s", out);
-				break;//ĞòºÅºóÄÚÈİÒÑ´òÓ¡Íê±Ï£¬¹ÊÌø³öÑ­»·
+				break;//åºå·åå†…å®¹å·²æ‰“å°å®Œæ¯•ï¼Œæ•…è·³å‡ºå¾ªç¯
 			}
 			printf("%s", out);
 		}
-		if (p != NULL&&flag == 0)//Èç¹ûËÑË÷µ½ĞòºÅÇÒÊÇµÚÒ»´ÎËÑË÷µ½ÏëÒªµÄĞòºÅ
+		if (p != NULL&&flag == 0)//å¦‚æœæœç´¢åˆ°åºå·ä¸”æ˜¯ç¬¬ä¸€æ¬¡æœç´¢åˆ°æƒ³è¦çš„åºå·
 		{
-			printf("\nÃ¿ÈÕÒ»ÑÔ£º%s", p + strlen(scan));//´òÓ¡³öĞòºÅºóµÄÄÚÈİ
-			sprintf(scan, "%d¡¢", d + 1);//ËÑË÷µÄĞòºÅ¼ÓÒ»
-			flag = 1;//ÒÑ¾­ËÑË÷µ½ĞòºÅ£¬¹ÊflagÖÃÒ»
+			printf("\næ¯æ—¥ä¸€è¨€ï¼š%s", p + strlen(scan));//æ‰“å°å‡ºåºå·åçš„å†…å®¹
+			sprintf(scan, "%dã€", d + 1);//æœç´¢çš„åºå·åŠ ä¸€
+			flag = 1;//å·²ç»æœç´¢åˆ°åºå·ï¼Œæ•…flagç½®ä¸€
 		}
 		memset(str, 0, 100);
 	}
@@ -794,16 +794,16 @@ void TBTuninstall()
 	FILE *fpuninstall = NULL;
 	system("cls");
 	system("color B");
-	printf("\n  ÄúÏëÒªĞ¶ÔØµô¼ÆÊ±Æ÷(%s)µÄËùÓĞÏà¹ØÎÄ¼şÂğ£¿\n",TBTversion);
-	printf("  Õâ½«µ¼ÖÂÄúµÄ¼ÆÊ±ÈÕÖ¾(%s)ÓÀÔ¶¶ªÊ§£¬È·¶¨Òª¼ÌĞøĞ¶ÔØÂğ£¿\n",TBTversion);
+	printf("\n  æ‚¨æƒ³è¦å¸è½½æ‰è®¡æ—¶å™¨(%s)çš„æ‰€æœ‰ç›¸å…³æ–‡ä»¶å—ï¼Ÿ\n",TBTversion);
+	printf("  è¿™å°†å¯¼è‡´æ‚¨çš„è®¡æ—¶æ—¥å¿—(%s)æ°¸è¿œä¸¢å¤±ï¼Œç¡®å®šè¦ç»§ç»­å¸è½½å—ï¼Ÿ\n",TBTversion);
 	system("pause");
-	printf("\n  ÕâÊÇÄú×îºóÒ»´Î±£Áô¼ÆÊ±ÈÕÖ¾µÄ»ú»áÁË£¬ÈÔÈ»È·¶¨Òª¼ÌĞøĞ¶ÔØÂğ£¿\n");
+	printf("\n  è¿™æ˜¯æ‚¨æœ€åä¸€æ¬¡ä¿ç•™è®¡æ—¶æ—¥å¿—çš„æœºä¼šäº†ï¼Œä»ç„¶ç¡®å®šè¦ç»§ç»­å¸è½½å—ï¼Ÿ\n");
 	system("pause");
-	printf("\n  È·±£ÄúÒÑ¾­¹Ø±ÕµôTBTset.iniµÄÒ³Ãæ£¬·ñÔò»áÁôÏÂÒ»¸ö¿ÕÎÄ¼ş¼Ğ\n");
+	printf("\n  ç¡®ä¿æ‚¨å·²ç»å…³é—­æ‰TBTset.iniçš„é¡µé¢ï¼Œå¦åˆ™ä¼šç•™ä¸‹ä¸€ä¸ªç©ºæ–‡ä»¶å¤¹\n");
 	system("pause");
 	
 	char filePathStr[128] = filePath;
-	int status = _rmdir(filePathStr); /*É¾³ı´´½¨µÄÎÄ¼ş¼Ğ*/
+	int status = _rmdir(filePathStr); /*åˆ é™¤åˆ›å»ºçš„æ–‡ä»¶å¤¹*/
 	int delFlag = 0;
 	(!status) ? (delFlag=1) :
 		(delFlag=0);
@@ -813,40 +813,42 @@ void TBTuninstall()
 	system(delCommand);
 	system("pause");
 	system("cls");
-	printf("\n  ÒÑ¾­É¾³ıµôËùÓĞÏà¹ØÎÄ¼ş£¬ÏÖÔÚÇëÍË³ö±¾³ÌĞò£¬Ö®ºóÉ¾³ı±¾³ÌĞò¼´¿É\n");
-	printf("  ºÜ¸ßĞËÓö¼ûÄã D\n");
+	printf("\n  å·²ç»åˆ é™¤æ‰æ‰€æœ‰ç›¸å…³æ–‡ä»¶ï¼Œç°åœ¨è¯·é€€å‡ºæœ¬ç¨‹åºï¼Œä¹‹ååˆ é™¤æœ¬ç¨‹åºå³å¯\n");
+	printf("  å¾ˆé«˜å…´é‡è§ä½  D\n");
 }
 
 void CountDay(int YearDay)
 {
-	printf("\n½ñÄêµÚ%dÌì£¬µÚ%dÖÜµÄÖÜ%d\n",
-		YearDay, (YearDay) / 7 + 1, (YearDay) % 7);
+	char weekday[7][10] = { "æ—¥", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­" };
+	int w = (YearDay) % 7;
+	printf("\nä»Šå¹´ç¬¬%då¤©ï¼Œç¬¬%då‘¨çš„å‘¨%s\n",
+		YearDay, (YearDay) / 7, weekday[w]);
 }
 
 int checkAllSet(data *TBT, char *model,int *seconds)
 {
 	int ret = 0;
-	ret = RecheckIni(TBT, model);//¶ÁÈ¡ÅäÖÃÎÄ¼ş
+	ret = RecheckIni(TBT, model);//è¯»å–é…ç½®æ–‡ä»¶
 	if (ret != 0)
 	{
 		printf("fun main() err: RecheckIni()\n");
 		return ret;
 	}
 	if (TBT->test != 2)
-		InfoPrint(*seconds, TBT, model);//´òÓ¡ÒªÏÔÊ¾µÄĞÅÏ¢
+		InfoPrint(*seconds, TBT, model);//æ‰“å°è¦æ˜¾ç¤ºçš„ä¿¡æ¯
 	if (TBT->day_words == 1){
 		int YearDay = 0;
-		GetYearDay(&YearDay);//»ñÈ¡ÏµÍ³Ê±¼ä£ºÏÖÔÚÊÇÒ»ÄêÖĞµÄµÚ¼¸Ìì
-		GetDayWords(YearDay);//Ã¿ÈÕÒ»ÑÔ¹¦ÄÜ
-		CountDay(YearDay);//½ñÄêµÚ¼¸Ìì£¬µÚ¼¸ÖÜµÄ¼ÆËã¹¦ÄÜ
+		GetYearDay(&YearDay);//è·å–ç³»ç»Ÿæ—¶é—´ï¼šç°åœ¨æ˜¯ä¸€å¹´ä¸­çš„ç¬¬å‡ å¤©
+		GetDayWords(YearDay);//æ¯æ—¥ä¸€è¨€åŠŸèƒ½
+		CountDay(YearDay);//ä»Šå¹´ç¬¬å‡ å¤©ï¼Œç¬¬å‡ å‘¨çš„è®¡ç®—åŠŸèƒ½
 	}
 	if (TBT->uninstall == 1){
-		TBTuninstall();//Ğ¶ÔØ¹¦ÄÜ
+		TBTuninstall();//å¸è½½åŠŸèƒ½
 		return -2;
 	}
 	if (TBT->all_reset == 1){
 		system("color B");
-		printf("ÄúÏëÒªÖØĞÂ³õÊ¼»¯ËùÓĞÅäÖÃÏîÂğ£¿\n");
+		printf("æ‚¨æƒ³è¦é‡æ–°åˆå§‹åŒ–æ‰€æœ‰é…ç½®é¡¹å—ï¼Ÿ\n");
 		system("pause");
 		char filePathStr[128] = filePath;
 		char fileNameStr[128] = "TBTset.ini";
@@ -857,13 +859,13 @@ int checkAllSet(data *TBT, char *model,int *seconds)
 	if (TBT->time_reset == 1){
 		*seconds = 0;
 		system("color E");
-		printf("ÏÖÔÚ´¦ÓÚ¼ÆÊ±³õÊ¼×´Ì¬£¬ÖØĞÂ¿ªÊ¼¼ÆÊ±Çë½«time_resetÅäÖÃÏîÉèÎª0\n");
+		printf("ç°åœ¨å¤„äºè®¡æ—¶åˆå§‹çŠ¶æ€ï¼Œé‡æ–°å¼€å§‹è®¡æ—¶è¯·å°†time_reseté…ç½®é¡¹è®¾ä¸º0\n");
 		Sleep(500);
 		system("color");
 	}
 	if (TBT->sound == 0 && TBT->lock == 0){
 		system("color A");
-		printf("\n²»ÄÜ½« ÆÁÄ»ËøÌáĞÑÅäÖÃÏîscreen lock ºÍ ÓïÒôÌáĞÑÅäÖÃÏîsound Í¬Ê±¹Ø±Õ£¬·ñÔò¼ÆÊ±Æ÷½«ÎŞ·¨ÌáĞÑ\n");
+		printf("\nä¸èƒ½å°† å±å¹•é”æé†’é…ç½®é¡¹screen lock å’Œ è¯­éŸ³æé†’é…ç½®é¡¹sound åŒæ—¶å…³é—­ï¼Œå¦åˆ™è®¡æ—¶å™¨å°†æ— æ³•æé†’\n");
 		if (TBT->test != 1)
 			Sleep(500);
 		system("color");
@@ -872,7 +874,7 @@ int checkAllSet(data *TBT, char *model,int *seconds)
 	{
 		*seconds = TBT->minutes * 60;
 		InfoPrint(*seconds, TBT, model);
-		printf("\nµ½´ï¼ÆÊ±ÖÕµãµÄ¼ÆÊ±Æ÷±íÏÖ²âÊÔÒÑ¾­Æô¶¯\n");
+		printf("\nåˆ°è¾¾è®¡æ—¶ç»ˆç‚¹çš„è®¡æ—¶å™¨è¡¨ç°æµ‹è¯•å·²ç»å¯åŠ¨\n");
 		return 0;
 	}
 	return 0;
@@ -882,22 +884,22 @@ int checkTime(int *seconds,const data *TBT,const char *model)
 {
 	int sec = *seconds;
 	if (sec == TBT->minutes * 60){
-		ITCAST_LOG(__FILE__, __LINE__, LogLevel[2], TBT->minutes, model);//ÏÈĞ´¹¤×÷ÈÕÖ¾
+		ITCAST_LOG(__FILE__, __LINE__, LogLevel[2], TBT->minutes, model);//å…ˆå†™å·¥ä½œæ—¥å¿—
 		if (TBT->sound == 1){
-			Music(TBT->music);//²¥·ÅÒôÀÖ
-			TimeBroadcast(sec, model);//Ê±¼ä²¥±¨ÌáĞÑ
+			Music(TBT->music);//æ’­æ”¾éŸ³ä¹
+			TimeBroadcast(sec, model);//æ—¶é—´æ’­æŠ¥æé†’
 		}
 		if (TBT->lock == 1){
 			system("rundll32.exe user32.dll,LockWorkStation");
 		}
-		printf("\nÏëÒªÖØĞÂ¿ªÊ¼¼ÆÊ±Âğ£¿\n");
+		printf("\næƒ³è¦é‡æ–°å¼€å§‹è®¡æ—¶å—ï¼Ÿ\n");
 		system("pause");
 		*seconds = 0;
 		return 0;
 	}
 	if (sec > TBT->minutes * 60){
 		system("color E");
-		printf("\n¼ÆÊ±ÒÑ¾­³¬¹ıÄúËùÉèÖÃµÄÊ±¼ä\n");
+		printf("\nè®¡æ—¶å·²ç»è¶…è¿‡æ‚¨æ‰€è®¾ç½®çš„æ—¶é—´\n");
 		Sleep(500);
 	}
 	return 0;
@@ -905,11 +907,11 @@ int checkTime(int *seconds,const data *TBT,const char *model)
 
 void Timer(char *title, clock_t *start, clock_t *middle, clock_t *finish, double *totaltime)
 {
-	printf("\n%sÊ±¼äÎª:", title);
-	*finish = clock();//»ñÈ¡µ±Ç°Ê±¼ä
-	*totaltime = (double)(*finish - *middle) / CLOCKS_PER_SEC;//¼ÆËãÖĞ¼äÊ±¼ä
-	printf("%fÃë ", *totaltime);
-	*totaltime = (double)(*finish - *start) / CLOCKS_PER_SEC;//¼ÆËãÕûÌåÊ±¼ä
+	printf("\n%sæ—¶é—´ä¸º:", title);
+	*finish = clock();//è·å–å½“å‰æ—¶é—´
+	*totaltime = (double)(*finish - *middle) / CLOCKS_PER_SEC;//è®¡ç®—ä¸­é—´æ—¶é—´
+	printf("%fç§’ ", *totaltime);
+	*totaltime = (double)(*finish - *start) / CLOCKS_PER_SEC;//è®¡ç®—æ•´ä½“æ—¶é—´
 	printf("totaltime:%f\n", totaltime);
 	*middle = *finish;
 }
@@ -922,15 +924,15 @@ void main()
 	data TBTdata;
 	data *TBT = &TBTdata;
 	TBTdataInitial(TBT);
-	char model[128] = { "work" };//ÓÉÓÚReadIniº¯ÊıÏŞÖÆ£¬×Ö·û´®Çë×¢Òâ²»Òª³õÊ¼»¯Îª0
-	ret = CreateIni("TBTset.ini");//Ã»ÓĞÅäÖÃÎÄ¼şÔò´´½¨Ò»¸öÅäÖÃÎÄ¼ş
+	char model[128] = { "work" };//ç”±äºReadIniå‡½æ•°é™åˆ¶ï¼Œå­—ç¬¦ä¸²è¯·æ³¨æ„ä¸è¦åˆå§‹åŒ–ä¸º0
+	ret = CreateIni("TBTset.ini");//æ²¡æœ‰é…ç½®æ–‡ä»¶åˆ™åˆ›å»ºä¸€ä¸ªé…ç½®æ–‡ä»¶
 	if (ret != 0){
 		printf("fun main() err: CreateIni()\n");
 		system("pause");
 		return;
 	}
 
-	//clock_t start, middle, finish;//²âÊ±
+	//clock_t start, middle, finish;//æµ‹æ—¶
 	//double totaltime;
 	//start = clock();
 	//middle = start;
@@ -946,12 +948,12 @@ void main()
 			break;
 
 		system("color 07");
-		Sleep(900);//ÑÓÊ±
+		Sleep(900);//å»¶æ—¶
 
 		ret = checkTime(&seconds, TBT, model);
 		if (ret != 0)
 			break;
-		//Timer("¼ÆÊ±Æ÷", &start, &middle, &finish, &totaltime);//²âÊÔÒ»ÃëÊµ¼ÊÊ±³¤
+		//Timer("è®¡æ—¶å™¨", &start, &middle, &finish, &totaltime);//æµ‹è¯•ä¸€ç§’å®é™…æ—¶é•¿
 	}
 End:	system("pause");
 }
